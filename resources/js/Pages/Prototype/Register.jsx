@@ -1,12 +1,12 @@
-import TextInput from "@/Components/TextInput";
 import InputLabel from "@/Components/InputLabel";
+import TextInput from "@/Components/TextInput";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Link, Head } from "@inertiajs/inertia-react";
 
-export default function Login() {
+export default function Register() {
     return (
         <>
-            <Head title="Login" />
+            <Head title="Sign Up" />
                 <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
                     <div className="fixed top-[-50px] hidden lg:block">
                         <img
@@ -20,7 +20,7 @@ export default function Login() {
                             <img src="/images/moonton-white.svg" alt="" />
                             <div className="my-[70px]">
                                 <div className="font-semibold text-[26px] mb-3">
-                                    Welcome Back
+                                    Sign Up
                                 </div>
                                 <p className="text-base text-[#767676] leading-7">
                                     Explore our new movies and get <br />
@@ -31,13 +31,27 @@ export default function Login() {
                                 <div className="flex flex-col gap-6">
                                     <div>
                                         <InputLabel
-                                            forInput="email"
-                                            value="Email Address"
+                                            forInput="fullname"
+                                            value="full name"
                                         />
+                                        <TextInput
+                                            type="text"
+                                            name="fullname"
+                                            placeholder="Your fullname..."
+                                            value="Angga React"
+                                        />
+                                    </div>
+                                    <div>
+                                        <InputLabel
+                                            forInput="email"
+                                            value="Email address"
+                                        />
+
                                         <TextInput
                                             type="email"
                                             name="email"
-                                            placeholder="masukan email"
+                                            placeholder="Your Email Address"
+                                            value="anggaforreact@fb.com"
                                         />
                                     </div>
                                     <div>
@@ -48,7 +62,8 @@ export default function Login() {
                                         <TextInput
                                             type="password"
                                             name="password"
-                                            placeholder="masukan password"
+                                            placeholder="Your Password"
+                                            value="eeeeeeeeeeeeeee"
                                         />
                                     </div>
                                 </div>
@@ -58,16 +73,16 @@ export default function Login() {
                                         variant="primary"
                                     >
                                         <span className="text-base font-semibold">
-                                            Start Watching
+                                            Sign Up
                                         </span>
                                     </PrimaryButton>
-                                    <Link href={route("prototype.register")}>
+                                    <Link href={route("prototype.login")}>
                                         <PrimaryButton
                                             type="button"
                                             variant="light-outline"
                                         >
                                             <span className="text-base text-white">
-                                                Create New Account
+                                                Sign In to My Account
                                             </span>
                                         </PrimaryButton>
                                     </Link>
@@ -76,7 +91,7 @@ export default function Login() {
                         </div>
                     </div>
                 </div>
-            
+         
         </>
     );
 }

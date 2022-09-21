@@ -22,10 +22,14 @@ Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('prototype')->group(function () {
+Route::prefix('prototype')->name('prototype.')->group(function () {
     route::get('/login', function () {
         return Inertia::render('Prototype/Login');
-    });
+    })->name('login');
+
+    route::get('/register', function () {
+        return Inertia::render('Prototype/Register');
+    })->name('register');
 });
 
 require __DIR__ . '/auth.php';
